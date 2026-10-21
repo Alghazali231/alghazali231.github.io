@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Muh. Alghazali - Siswa SMK TJKT</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-300">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-zinc-200/80 dark:border-zinc-900/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <span class="w-11 h-11 rounded-xl bg-gradient-to-br from-orange-500 via-orange-600 to-black flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-orange-500/30 group-hover:scale-105 transition-transform">A</span>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-orange-500 via-amber-500 to-zinc-900 dark:from-orange-400 dark:via-amber-400 dark:to-white bg-clip-text text-transparent">Muh. Alghazali</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-7">
+                    <a href="#about" class="text-sm font-semibold hover:text-orange-500 dark:hover:text-orange-400 transition-colors">Tentang Saya</a>
+                    <a href="#skills" class="text-sm font-semibold hover:text-orange-500 dark:hover:text-orange-400 transition-colors">Keahlian</a>
+                    <a href="#projects" class="text-sm font-semibold hover:text-orange-500 dark:hover:text-orange-400 transition-colors">Praktikum & Proyek</a>
+                    <a href="#experience" class="text-sm font-semibold hover:text-orange-500 dark:hover:text-orange-400 transition-colors">Pengalaman</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white text-sm font-bold shadow-lg shadow-orange-500/25 transition-all hover:-translate-y-0.5">Hubungi Saya</a>
+                    
+                    <!-- Dark Mode Toggle -->
+                    <button id="theme-toggle" type="button" aria-label="Toggle theme" class="p-2.5 rounded-xl bg-zinc-200/80 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 hover:text-orange-500 dark:hover:text-orange-400 transition-colors border border-zinc-300 dark:border-zinc-800">
+                        <i id="theme-toggle-dark-icon" class="fas fa-moon hidden"></i>
+                        <i id="theme-toggle-light-icon" class="fas fa-sun hidden"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden space-x-2">
+                    <button id="mobile-theme-toggle" type="button" aria-label="Toggle theme mobile" class="p-2.5 rounded-xl bg-zinc-200 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 border border-zinc-300 dark:border-zinc-800">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <button id="menu-btn" type="button" aria-label="Open navigation menu" class="p-2.5 rounded-xl text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-3 pb-5 space-y-2.5 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-900">
+            <a href="#about" class="block px-3.5 py-2.5 rounded-xl font-semibold hover:bg-orange-50 dark:hover:bg-orange-950/40 hover:text-orange-500">Tentang Saya</a>
+            <a href="#skills" class="block px-3.5 py-2.5 rounded-xl font-semibold hover:bg-orange-50 dark:hover:bg-orange-950/40 hover:text-orange-500">Keahlian</a>
+            <a href="#projects" class="block px-3.5 py-2.5 rounded-xl font-semibold hover:bg-orange-50 dark:hover:bg-orange-950/40 hover:text-orange-500">Praktikum & Proyek</a>
+            <a href="#experience" class="block px-3.5 py-2.5 rounded-xl font-semibold hover:bg-orange-50 dark:hover:bg-orange-950/40 hover:text-orange-500">Pengalaman</a>
+            <a href="#contact" class="block px-3.5 py-3 rounded-xl font-bold bg-gradient-to-r from-orange-500 to-amber-600 text-white text-center shadow-md">Hubungi Saya</a>
+        </div>
+    </nav>
+
+    <section id="about" class="pt-36 pb-20 overflow-hidden relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="md:col-span-12 space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 dark:bg-orange-950/70 border border-orange-200 dark:border-orange-800/80 text-orange-600 dark:text-orange-400 text-xs font-bold shadow-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-orange-500 animate-ping"></span>
+                        <span>Siswa Kelas 11 SMKN 1 Kolaka &bull; Jurusan TJKT</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Halo, Saya <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-r from-orange-500 via-amber-500 to-zinc-800 dark:from-orange-400 dark:via-amber-400 dark:to-white bg-clip-text text-transparent">Muh. Alghazali</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
+                        Siswa Kelas 11 SMKN 1 Kolaka yang berfokus pada <strong class="text-zinc-900 dark:text-zinc-100 font-semibold">Administrasi Jaringan, Server Linux, MikroTik, & Infrastruktur Telekomunikasi</strong>. Siap berkonfigurasi dan menjelajahi teknologi jaringan masa kini.
+                    </p>
+                    
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
+                        <a href="#projects" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-bold shadow-lg shadow-orange-500/25 transition-all hover:-translate-y-0.5">
+                            Lihat Praktikum & Proyek
+                        </a>
+                        <a href="#contact" class="px-7 py-3.5 rounded-xl border border-zinc-300 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-900 font-bold transition-all">
+                            Kontak Saya
+                        </a>
+                    </div>
+
+                    <!-- Tech Badge Quick View -->
+                    <div class="pt-6 border-t border-zinc-200 dark:border-zinc-800/80 flex flex-wrap items-center justify-center md:justify-start gap-4">
+                        <span class="text-xs font-bold text-zinc-500 uppercase tracking-wider">Spesialisasi:</span>
+                        <div class="flex items-center gap-3 text-zinc-700 dark:text-zinc-300">
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 px-3 py-1.5 rounded-xl">
+                                <i class="fas fa-network-wired text-orange-500"></i> Networking
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 px-3 py-1.5 rounded-xl">
+                                <i class="fab fa-linux text-amber-500"></i> Linux Server
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 text-xs font-bold bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 px-3 py-1.5 rounded-xl">
+                                <i class="fas fa-wifi text-orange-600"></i> MikroTik
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-zinc-100/60 dark:bg-zinc-950/50 border-y border-zinc-200/80 dark:border-zinc-900/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/60 px-3.5 py-1.5 rounded-full">Kompetensi Utama</span>
+                <h2 class="text-3xl font-extrabold tracking-tight mt-3">Keahlian & Kejuruan TJKT</h2>
+                <p class="text-zinc-600 dark:text-zinc-400 mt-2">Kompetensi keahlian Teknik Jaringan Komputer dan Telekomunikasi yang dipelajari di Kelas 11.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Networking Card -->
+                <div class="p-8 rounded-2xl bg-white dark:bg-zinc-900 shadow-xl shadow-zinc-200/50 dark:shadow-none border border-zinc-200 dark:border-zinc-800 hover:border-orange-500 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-100 dark:bg-orange-950/80 text-orange-600 dark:text-orange-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Jaringan Dasar & Routing</h3>
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">Pengaturan router, subnetting, serta instalasi jaringan LAN dan Wireless Access Point.</p>
+                    <ul class="space-y-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-orange-500"></i> Konfigurasi MikroTik (MTCNA Basic)</li>
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-orange-500"></i> Cisco Packet Tracer Simulation</li>
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-orange-500"></i> IP Addressing & Subnetting VLSM</li>
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-orange-500"></i> VLAN, Static & Dynamic Routing</li>
+                    </ul>
+                </div>
+
+                <!-- Server Card -->
+                <div class="p-8 rounded-2xl bg-white dark:bg-zinc-900 shadow-xl shadow-zinc-200/50 dark:shadow-none border border-zinc-200 dark:border-zinc-800 hover:border-orange-500 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Administrasi Server</h3>
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">Pembangunan dan manajemen layanan server berbasis sistem operasi Linux.</p>
+                    <ul class="space-y-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-amber-500"></i> Server Linux Debian / Ubuntu</li>
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-amber-500"></i> Layanan Web, DNS & DHCP Server</li>
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-amber-500"></i> FTP, SSH & Remote Administration</li>
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-amber-500"></i> Virtualisasi (VirtualBox)</li>
+                    </ul>
+                </div>
+
+                <!-- Telecom & Hardware Card -->
+                <div class="p-8 rounded-2xl bg-white dark:bg-zinc-900 shadow-xl shadow-zinc-200/50 dark:shadow-none border border-zinc-200 dark:border-zinc-800 hover:border-orange-500 transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-100 dark:bg-orange-950/80 text-orange-600 dark:text-orange-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Telekomunikasi & Hardware</h3>
+                    <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-6 leading-relaxed">Pengabelan jaringan fisik, fiber optik, dan perawatan perangkat komputer/jaringan.</p>
+                    <ul class="space-y-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-orange-500"></i> Splicing & Penyambungan Fiber Optic</li>
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-orange-500"></i> Crimping Kabel UTP (Straight/Cross)</li>
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-orange-500"></i> Troubleshooting Hardware PC</li>
+                        <li class="flex items-center gap-2.5"><i class="fas fa-check text-orange-500"></i> Pengujian dengan LAN Tester / OPM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14">
+                <div>
+                    <span class="text-xs font-extrabold uppercase tracking-widest text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/60 px-3.5 py-1.5 rounded-full">Portofolio Karya</span>
+                    <h2 class="text-3xl font-extrabold tracking-tight mt-3">Praktikum & Proyek TJKT</h2>
+                    <p class="text-zinc-600 dark:text-zinc-400 mt-2">Kumpulan tugas praktik laboratorium jaringan, server, dan proyek telekomunikasi.</p>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Item 1 -->
+                <div class="rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-xl shadow-zinc-200/50 dark:shadow-none hover:border-orange-500 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-zinc-900">
+                            <img src="https://placehold.co/600x400/09090b/f97316?text=MikroTik+Hotspot+Lab" alt="MikroTik Router Setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90">
+                            <span class="absolute top-3 right-3 px-3 py-1 bg-black/80 backdrop-blur-md text-orange-400 text-xs font-bold rounded-full border border-orange-500/30">Praktikum MikroTik</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 group-hover:text-orange-500 transition-colors">Manajemen Bandwidth & Hotspot MikroTik</h3>
+                            <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">Konfigurasi MikroTik RB951 untuk manajemen login user voucher, pemblokiran situs, dan Simple Queue bandwidth limit.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-xs font-bold">RouterOS</span>
+                                <span class="px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-xs font-bold">Winbox</span>
+                                <span class="px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-xs font-bold">Hotspot</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-0 flex items-center justify-between">
+                        <button onclick="openModal('Hotspot & Bandwidth MikroTik', 'Membangun jaringan Wi-Fi sekolah berbasis portal Voucher Hotspot MikroTik menggunakan Winbox. Melakukan pembatasan kecepatan unduh/unggah tiap user serta memblokir situs menggunakan Filter Rules.')" class="text-xs font-bold text-orange-600 dark:text-orange-400 hover:underline">Detail Selengkapnya &rarr;</button>
+                        <i class="fas fa-wifi text-zinc-400"></i>
+                    </div>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div class="rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-xl shadow-zinc-200/50 dark:shadow-none hover:border-orange-500 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-zinc-900">
+                            <img src="https://placehold.co/600x400/09090b/f59e0b?text=Linux+Debian+Server" alt="Linux Server Setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90">
+                            <span class="absolute top-3 right-3 px-3 py-1 bg-black/80 backdrop-blur-md text-amber-400 text-xs font-bold rounded-full border border-amber-500/30">Administrasi Server</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 group-hover:text-orange-500 transition-colors">Server Lokal Linux Debian 11</h3>
+                            <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">Instalasi dan konfigurasi server berbasis CLI untuk layanan DNS (Bind9), Web Server (Apache2), dan DHCP Server.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-xs font-bold">Linux Debian</span>
+                                <span class="px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-xs font-bold">Bind9</span>
+                                <span class="px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-xs font-bold">Apache</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-0 flex items-center justify-between">
+                        <button onclick="openModal('Server Linux Debian 11', 'Proyek pembuatan server berbasis Linux CLI pada VirtualBox. Mengonfigurasi IP Static, Bind9 DNS Server (domain lokal sekolah.sch.id), Apache2 Web Server, dan FTP Server.')" class="text-xs font-bold text-orange-600 dark:text-orange-400 hover:underline">Detail Selengkapnya &rarr;</button>
+                        <i class="fab fa-linux text-zinc-400"></i>
+                    </div>
+                </div>
+
+                <!-- Project Item 3 -->
+                <div class="rounded-2xl overflow-hidden bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-xl shadow-zinc-200/50 dark:shadow-none hover:border-orange-500 transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="relative overflow-hidden aspect-video bg-zinc-900">
+                            <img src="https://placehold.co/600x400/09090b/ea580c?text=Fiber+Optic+Splicing" alt="Fiber Optic Splicing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-90">
+                            <span class="absolute top-3 right-3 px-3 py-1 bg-black/80 backdrop-blur-md text-orange-400 text-xs font-bold rounded-full border border-orange-500/30">Telekomunikasi</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 group-hover:text-orange-500 transition-colors">Praktik Splicing & Instalasi FTTH</h3>
+                            <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-4 leading-relaxed">Penyambungan inti kabel Fiber Optic menggunakan Fusion Splicer dan pengukuran redaman serat optik dengan OPM.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-xs font-bold">Fiber Optic</span>
+                                <span class="px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-xs font-bold">Fusion Splicer</span>
+                                <span class="px-3 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-xs font-bold">OPM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-0 flex items-center justify-between">
+                        <button onclick="openModal('Splicing Fiber Optic', 'Praktik lapangan penyambungan kabel serat optik menggunakan Fusion Splicer, pemasangan SOC/Fast Connector, dan pengukuran loss/redaman menggunakan OPM untuk standar jaringan FTTH.')" class="text-xs font-bold text-orange-600 dark:text-orange-400 hover:underline">Detail Selengkapnya &rarr;</button>
+                        <i class="fas fa-bolt text-zinc-400"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-zinc-100/60 dark:bg-zinc-950/50 border-y border-zinc-200/80 dark:border-zinc-900/80">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-950/60 px-3.5 py-1.5 rounded-full">Jejak Belajar</span>
+                <h2 class="text-3xl font-extrabold tracking-tight mt-3">Pengalaman & Riwayat Belajar</h2>
+                <p class="text-zinc-600 dark:text-zinc-400 mt-2">Jejak aktivitas pembelajaran di Kelas 11 TJKT dan persiapan Praktik Kerja Lapangan (PKL).</p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative border-l-2 border-orange-500/40 ml-4 md:ml-32 space-y-12">
+                
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="hidden md:block absolute -left-36 top-1 text-right w-28 text-xs font-extrabold text-zinc-500 dark:text-zinc-400">
+                        Kelas 10
+                    </div>
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-zinc-800 text-orange-400 border border-orange-500/30 flex items-center justify-center text-sm shadow-lg">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <div class="bg-white dark:bg-zinc-900 p-7 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-md">
+                        <span class="md:hidden inline-block text-xs font-extrabold text-zinc-500 dark:text-zinc-400 mb-1">Kelas 10</span>
+                        <h3 class="text-lg font-bold">Dasar-Dasar Teknik Jaringan Komputer & Telekomunikasi</h3>
+                        <p class="text-sm font-semibold text-zinc-500 dark:text-zinc-400 mb-3">Fondasi Keahlian SMK</p>
+                        <p class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                            Memahami perakitan komputer, instalasi sistem operasi Windows/Linux, serta konsep dasar IP Addressing & Subnetting.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="hidden md:block absolute -left-36 top-1 text-right w-28 text-xs font-extrabold text-orange-600 dark:text-orange-400">
+                        Kelas 11 (Semester satu)
+                    </div>
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-orange-600 text-white flex items-center justify-center text-sm shadow-lg shadow-orange-500/30">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="bg-white dark:bg-zinc-900 p-7 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-md">
+                        <span class="md:hidden inline-block text-xs font-extrabold text-orange-600 dark:text-orange-400 mb-1">Kelas 11 (Aktif)</span>
+                        <h3 class="text-lg font-bold">Pendalaman Administrasi Server & Jaringan</h3>
+                        <p class="text-sm font-semibold text-zinc-500 dark:text-zinc-400 mb-3">Fokus Keahlian di bidang TJKT</p>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-2">
+                            <li>konfigurasi routing dasar menggunakan Cisco Packet Tracer dan MikroTik.</li>
+                            <li>Mengikuti pelatihan intensif penyambungan kabel Fiber Optic (FTTH).</li>
+                            <li>Praktikum pemasangan connector untuk kabel UTP.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="hidden md:block absolute -left-36 top-1 text-right w-28 text-xs font-extrabold text-orange-600 dark:text-orange-400">
+                        Kelas 11 (Semester dua)
+                    </div>
+                    <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-orange-600 text-white flex items-center justify-center text-sm shadow-lg shadow-orange-500/30">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="bg-white dark:bg-zinc-900 p-7 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-md">
+                        <span class="md:hidden inline-block text-xs font-extrabold text-orange-600 dark:text-orange-400 mb-1">Semester 4 (Aktif)</span>
+                        <h3 class="text-lg font-bold">Persiapan & Pembekalan Praktik Kerja Lapangan (PKL)</h3>
+                        <p class="text-sm font-semibold text-zinc-500 dark:text-zinc-400 mb-3">Persiapan Industri ISP / Network Engineer Intern</p>
+                        <ul class="list-disc list-inside text-sm text-zinc-600 dark:text-zinc-300 space-y-2">
+                            <li>Pendalaman konfigurasi MikroTik Router & Manajemen Bandwidth Hotspot.</li>
+                            <li>Memperdalam kemampuan routing dasar MikroTik dan Cisco Router.</li>
+                            <li>Pembekalan etika kerja industri dan kesiapan penempatan PKL.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-neutral-950 via-orange-950 to-neutral-900 border border-orange-500/30 rounded-3xl p-8 sm:p-14 text-white shadow-2xl relative overflow-hidden">
+                <!-- Background decorative shapes -->
+                <div class="absolute top-0 right-0 -mt-12 -mr-12 w-80 h-80 rounded-full bg-orange-600/20 blur-3xl pointer-events-none"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center relative z-10">
+                    <div class="md:col-span-6 space-y-4">
+                        <span class="text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-900/50 px-3 py-1.5 rounded-full border border-orange-500/30">Hubungi Kami</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mt-2">Ingin Bekerja Sama / Penawaran PKL?</h2>
+                        <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                            Saya Muh. Alghazali, siswa kelas 11 TJKT yang siap mengikuti program Praktik Kerja Lapangan (PKL) atau penawaran proyek instalasi jaringan skala kecil/menengah.
+                        </p>
+                        
+                        <div class="space-y-3 pt-2">
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-11 h-11 rounded-xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 text-lg"><i class="fas fa-envelope"></i></div>
+                                <span class="text-sm font-semibold">malgha943@gmail.com</span>
+                            </div>
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-11 h-11 rounded-xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 text-lg"><i class="fab fa-whatsapp"></i></div>
+                                <span class="text-sm font-semibold">+62 823-2458-9240</span>
+                            </div>
+                            <div class="flex items-center gap-3.5">
+                                <div class="w-11 h-11 rounded-xl bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 text-lg"><i class="fas fa-map-marker-alt"></i></div>
+                                <span class="text-sm font-semibold">Kolaka, Sulawesi Tenggara, Indonesia</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="md:col-span-6">
+                        <form id="contact-form" class="bg-black/40 backdrop-blur-md p-7 rounded-2xl border border-orange-500/20 space-y-4 shadow-xl">
+                            <div>
+                                <label class="block text-xs font-bold mb-1.5 text-orange-300 uppercase tracking-wider">Nama / Perusahaan</label>
+                                <input type="text" placeholder="Masukkan nama atau instansi" required class="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm font-medium">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold mb-1.5 text-orange-300 uppercase tracking-wider">Kontak (WhatsApp / Email)</label>
+                                <input type="text" placeholder="Kontak yang bisa dihubungi" required class="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm font-medium">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold mb-1.5 text-orange-300 uppercase tracking-wider">Pesan / Info PKL</label>
+                                <textarea rows="3" placeholder="Tuliskan pesan atau info tawaran PKL..." required class="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 text-white placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm font-medium"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-bold transition-all shadow-lg shadow-orange-500/30">
+                                Kirim Pesan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 border-t border-zinc-200 dark:border-zinc-900 text-center text-sm text-zinc-500">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Muh. Alghazali &bull; Siswa SMKN 1 Kolaka Bidang TJKT.</p>
+            <div class="flex space-x-5 text-lg">
+                <a href="https://github.com/Alghazali231" class="hover:text-orange-500 transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" class="hover:text-orange-500 transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/Alstra.43" class="hover:text-orange-500 transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm hidden">
+        <div class="bg-white dark:bg-zinc-900 max-w-lg w-full rounded-2xl p-7 shadow-2xl space-y-4 border border-zinc-200 dark:border-zinc-800">
+            <h3 id="modal-title" class="text-xl font-bold">Title</h3>
+            <p id="modal-desc" class="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed">Description</p>
+            <div class="pt-4 flex justify-end">
+                <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-zinc-200 dark:bg-zinc-800 text-sm font-bold hover:bg-zinc-300 dark:hover:bg-zinc-700 transition-colors">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript File -->
+    <script src="script.js" defer></script>
+</body>
+</html>
