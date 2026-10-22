@@ -90,3 +90,96 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(el => observer.observe(el));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Membuat canvas latar belakang secara otomatis
+    const canvas = document.createElement('canvas');
+    canvas.id = 'dynamic-bg-canvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100vw';
+    canvas.style.height = '100vh';
+    canvas.style.zIndex = '-1';
+    canvas.style.pointerEvents = 'none';
+    document.body.prepend(canvas);
+
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            // Kecepatan gerakan partikel
+            this.vx = (Math.random() - 0.5) * 1.5;
+            this.vy = (Math.random() - 0.5) * 1.5;
+            // Ukuran partikel lebih besar agar terlihat jelas
+            this.size = Math.random() * 3 + 2;
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            // Pantulan di batas layar
+            if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+            if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+        }
+
+        draw() {
+            // Titik partikel berwarna oranye tebal
+            ctx.fillStyle = 'rgba(249, 115, 22, 0.85)';
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function initParticles() {
+        particlesArray = [];
+        // Kepadatan jumlah partikel
+        const numParticles = Math.floor((canvas.width * canvas.height) / 10000);
+        for (let i = 0; i < numParticles; i++) {
+            particlesArray.push(new Particle());
+        }
+    }
+    initParticles();
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
+
+            // Hubungkan titik-titik dengan garis jaringan yang lebih tebal dan terhubung
+            for (let j = i + 1; j < particlesArray.length; j++) {
+                const dx = particlesArray[i].x - particlesArray[j].x;
+                const dy = particlesArray[i].y - particlesArray[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                // Jarak maksimal garis antar titik
+                if (distance < 140) {
+                    const opacity = 1 - (distance / 140);
+                    ctx.strokeStyle = `rgba(249, 115, 22, ${opacity * 0.4})`; // Warna garis jaringan oranye
+                    ctx.lineWidth = 1.5; // Ketebalan garis ditingkatkan
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(animateParticles);
+    }
+
+    animateParticles();
+});
